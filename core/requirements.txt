@@ -1,0 +1,13 @@
+Django==4.2
+django-cors-headers==3.8.0
+django-crispy-forms==2.1
+django-filter==23.5
+django-jet==1.0.8
+django-modeltranslation==0.18.9
+django-rosetta==0.9.5
+djangorestframework==3.12.4
+filelock==3.13.1
+frozenlist==1.4.0
+requests==2.25.1
+sqlparse==0.4.4
+virtualenv==20.24.6

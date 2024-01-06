@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Imperia | Registration</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="{% static 'assets/logo.png' %}" type="image/x-icon">
+</head>
+<body>
+    <section class="container" style="position: relative;">
+        <div class="logo-box">
+            <img class="logo" style="width: auto; height: 50px; background-size: cover;" src="/static/assets/logo.png" alt="logo">
+        </div>
+        <header>Ro'yhatdan o'tish</header>
+        <p style="width: 100%; text-align: center; color: #c5c5c5;">Quyidagi maydonlarni to'ldirib chiqishingizni so'raymiz !</p>
+        <form method="post" action="{% url 'home' %}" class="form">
+            {% csrf_token %}
+
+            <div class="input-box">
+                <label for="{{ form.name.id_for_label }}">Ta'liq ism-sharfingiz</label>
+                <input type="text" name="{{ form.name.name }}" placeholder="To'liq ism-sharfingizni kiriting" required />
+            </div>
+        
+            <div class="input-box inbutBoxN2">
+                <label for="{{ form.age.id_for_label }}">Yoshingiz oralig'ini tanlang</label>
+                {{ form.age }}
+            </div>
+        
+            <div class="input-box inbutBoxN2">
+                <label for="{{ form.experience.id_for_label }}">Tajriba oralig'ini tanlang</label>
+                {{ form.experience }}
+            </div>
+        
+            <div class="input-box inbutBoxN2">
+                <label for="{{ form.job.id_for_label }}">Ish turini tanlang</label>
+                {{ form.job }}
+            </div>
+        
+            <div class="input-box">
+                <label for="{{ form.phone.id_for_label }}">Telefon raqamingiz</label>
+                <input type="number" name="{{ form.phone.name }}" placeholder="Telefon raqamingizni kiriting" required />
+            </div>
+        
+            <div class="input-box inbutBoxN2">
+                <label for="{{ form.text.id_for_label }}">Qo'shimcha ma'lumot uchun</label>
+                <textarea name="{{ form.text.name }}" placeholder="Sizni qiziqtirgan qo'shimcha savollar yoki Qo'shimcha ma'lumot uchun"></textarea>
+            </div>
+
+            <button type="submit">Jo'natish</button>
+        </form>
+      </section>
+</body>
+</html>
